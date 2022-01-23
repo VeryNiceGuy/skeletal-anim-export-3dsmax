@@ -1,7 +1,7 @@
 #include "Matrix4x4.h"
 #include <memory>
 
-//Умножаем на скаляр
+//РЈРјРЅРѕР¶Р°РµРј РЅР° СЃРєР°Р»СЏСЂ
 void  POD_Math::Matrix4x4Mul(POD_Math::Matrix4x4& r, const POD_Math::Matrix4x4& md, const float mr)
 {
 	r._11 = md._11 * mr;  r._12 = md._12 * mr;  r._13 = md._13 * mr;  r._14= md._14 * mr;
@@ -13,7 +13,7 @@ void  POD_Math::Matrix4x4Mul(POD_Math::Matrix4x4& r, const POD_Math::Matrix4x4& 
 	r._41 = md._41 * mr;  r._42 = md._42 * mr;  r._43 = md._43 * mr;  r._44= md._44 * mr;
 }; 
 
-// Транспонирование
+// РўСЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРёРµ
 void POD_Math::Matrix4x4Transpose(POD_Math::Matrix4x4& m)                                                                  
 {                     
 	POD_Math::Matrix4x4 tmp = POD_Math::Matrix4x4();
@@ -29,7 +29,7 @@ void POD_Math::Matrix4x4Transpose(POD_Math::Matrix4x4& m)
 	m=tmp;
 };                         
 
-// Транспонирование
+// РўСЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРёРµ
 void POD_Math::Matrix4x4Transpose(POD_Math::Matrix4x4& r, const POD_Math::Matrix4x4& m)                                                                  
 {                     
 
@@ -43,7 +43,7 @@ void POD_Math::Matrix4x4Transpose(POD_Math::Matrix4x4& r, const POD_Math::Matrix
 
 }; 
 
-// Сложение
+// РЎР»РѕР¶РµРЅРёРµ
 void POD_Math::Matrix4x4Add(POD_Math::Matrix4x4& r, const POD_Math::Matrix4x4& s0, const POD_Math::Matrix4x4& s1)
 {
 	r._11  = s0._11  + s1._11;  r._12 = s0._12 + s1._12;  r._13 = s0._13 + s1._13;  r._14 = s0._14 + s1._14;
@@ -55,7 +55,7 @@ void POD_Math::Matrix4x4Add(POD_Math::Matrix4x4& r, const POD_Math::Matrix4x4& s
 	r._41  = s0._41  + s1._41;  r._42 = s0._42 + s1._42;  r._43 = s0._43 + s1._43;  r._44 = s0._44 + s1._44;
 };
 
-// Вычитание
+// Р’С‹С‡РёС‚Р°РЅРёРµ
 void POD_Math::Matrix4x4Sub(POD_Math::Matrix4x4& r, const POD_Math::Matrix4x4& m, const POD_Math::Matrix4x4& s)
 {
 	r._11  = m._11  - s._11;  r._12 = m._12 - s._12;  r._13 = m._13 - s._13;  r._14 = m._14 - s._14;
@@ -67,7 +67,7 @@ void POD_Math::Matrix4x4Sub(POD_Math::Matrix4x4& r, const POD_Math::Matrix4x4& m
 	r._41  = m._41  - s._41;  r._42 = m._42 - s._42;  r._43 = m._43 - s._43;  r._44 = m._44 - s._44;
 };
 
-// Умножение
+// РЈРјРЅРѕР¶РµРЅРёРµ
 void POD_Math::Matrix4x4Mul(POD_Math::Matrix4x4& r, const POD_Math::Matrix4x4& md, const POD_Math::Matrix4x4& mr)
 {
 	r._11 = md._11 * mr._11 + md._12 * mr._21 + md._13 * mr._31 + md._14 * mr._41;
@@ -106,13 +106,13 @@ void POD_Math::Matrix4x4Mul(POD_Math::Matrix4x4& r, const POD_Math::Matrix4x4& m
 	r._44 = md._41 * mr._14 + md._42 * mr._24 + md._43 * mr._34 + md._44 * mr._44;
 };
 
-// Обнуление
+// РћР±РЅСѓР»РµРЅРёРµ
 void POD_Math::Matrix4x4Zero(POD_Math::Matrix4x4&i)
 {
 	memset(&i,0,sizeof(POD_Math::Matrix4x4));
 };
 
-// Обнуление
+// РћР±РЅСѓР»РµРЅРёРµ
 void POD_Math::Matrix4x4Identity(POD_Math::Matrix4x4&i)
 {
 	i._11 = 1.0f; i._12 = 0.0f; i._13 = 0.0f; i._14 = 0.0f;
@@ -124,13 +124,13 @@ void POD_Math::Matrix4x4Identity(POD_Math::Matrix4x4&i)
 	i._41 = 0.0f; i._42 = 0.0f; i._43 = 0.0f; i._44 = 1.0f;
 };
 
-// След
+// РЎР»РµРґ
 float POD_Math::Matrix4x4Trace(const POD_Math::Matrix4x4& m)
 {
 	return m._11 + m._22 + m._33 + m._44; 
 };
 
-// Создаем леворукую матрицу перспективной проекции
+// РЎРѕР·РґР°РµРј Р»РµРІРѕСЂСѓРєСѓСЋ РјР°С‚СЂРёС†Сѓ РїРµСЂСЃРїРµРєС‚РёРІРЅРѕР№ РїСЂРѕРµРєС†РёРё
 void POD_Math::CreatePerspectiveFovLH(POD_Math::Matrix4x4& p, float z_near, float z_far, float fovY, float aspect)
 {
 	float cotangent = 1.0f / tan( fovY / 2.0f );

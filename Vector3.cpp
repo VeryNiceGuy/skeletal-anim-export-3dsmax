@@ -70,7 +70,7 @@ void POD_Math::Vector3Sub(POD_Math::Vector3& r, const POD_Math::Vector3& m, cons
 	r.z = m.z - s.z;
 };
 
-// Умножение вектора на матрицу
+// вЂќРјРЅРѕР¶РµРЅРёРµ РІРµРєС‚РѕСЂР° РЅР° РјР°С‚СЂРёС†Сѓ
 void POD_Math::Vector3Mul(POD_Math::Vector3& r, const POD_Math::Vector3& md, const POD_Math::Matrix4x3& mr)
 {
 	r.x = md.x * mr._11 + md.y * mr._21 + md.z * mr._31 + mr._41;
@@ -80,13 +80,13 @@ void POD_Math::Vector3Mul(POD_Math::Vector3& r, const POD_Math::Vector3& md, con
 	r.y = md.x * mr._13 + md.y * mr._23 + md.z * mr._33 + mr._43;
 };
 
-// Скалярное умножение
+// вЂ”РєР°Р»В¤СЂРЅРѕРµ СѓРјРЅРѕР¶РµРЅРёРµ
 float POD_Math::Vector3Dot(const POD_Math::Vector3& md,const POD_Math::Vector3& mr)
 {
 	return md.x * mr.x + md.y * mr.y + md.z * mr.z;
 };
 
-// Векторное умножение
+// В¬РµРєС‚РѕСЂРЅРѕРµ СѓРјРЅРѕР¶РµРЅРёРµ
 void POD_Math::Vector3Cross(POD_Math::Vector3& r, const POD_Math::Vector3& md, const POD_Math::Vector3& mr)
 {
 	r.x = md.y * mr.z - md.z * mr.y;
@@ -96,7 +96,7 @@ void POD_Math::Vector3Cross(POD_Math::Vector3& r, const POD_Math::Vector3& md, c
 	r.z = md.x * mr.y - md.y * mr.x;
 };
 
-// Линейная интерполяция
+// Р‹РёРЅРµР№РЅР°В¤ РёРЅС‚РµСЂРїРѕР»В¤С†РёВ¤
 void POD_Math::Vector3Lerp(POD_Math::Vector3& r, POD_Math::Vector3& start, const POD_Math::Vector3& end, const float diff)
 {
 	Vector3 VDiff=Vector3();

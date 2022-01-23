@@ -478,7 +478,7 @@ int	wox::DoExport(const TCHAR* name,ExpInterface* ei,Interface* i, BOOL suppress
 
 
 			//***************************************
-			//       Инверсия
+			//       РРЅРІРµСЂСЃРёСЏ
 			//***************************************
 			Point3 SMr0=SpaceMatrix3.GetRow(0);
 			Point3 SMr1=SpaceMatrix3.GetRow(1);

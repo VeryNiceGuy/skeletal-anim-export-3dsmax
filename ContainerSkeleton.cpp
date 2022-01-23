@@ -9,7 +9,7 @@
 	  ContainerSkeleton::~ContainerSkeleton()
 	  {   
 		  NumBones=0;
-		  Root=0;              // На случай если вы - псих и реконструируете класс)
+		  Root=0;              // РќР° СЃР»СѓС‡Р°Р№ РµСЃР»Рё РІС‹ - РїСЃРёС… Рё СЂРµРєРѕРЅСЃС‚СЂСѓРёСЂСѓРµС‚Рµ РєР»Р°СЃСЃ)
 		  delete[] BoneTable;
 		  delete[] Preallocated;
 	  };

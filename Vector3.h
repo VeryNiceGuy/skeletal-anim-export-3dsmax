@@ -15,32 +15,32 @@ namespace POD_Math
 
 #pragma pack(pop)
 
-// Нормализация
+// РЊРѕСЂРјР°Р»РёР·Р°С†РёВ¤
 void  Vector3Normal(Vector3&);
 void  Vector3Normal(Vector3&, const Vector3&);
 
-// Умножение вектора на скаляр
+// вЂќРјРЅРѕР¶РµРЅРёРµ РІРµРєС‚РѕСЂР° РЅР° СЃРєР°Р»В¤СЂ
 void  Vector3Mul(Vector3&,const Vector3&, const float);
 
- // Деление вектора на скаляр
+ // Ж’РµР»РµРЅРёРµ РІРµРєС‚РѕСЂР° РЅР° СЃРєР°Р»В¤СЂ
 void  Vector3Div(Vector3&,const Vector3&, const float);
 
-// Сложение векторов
+// вЂ”Р»РѕР¶РµРЅРёРµ РІРµРєС‚РѕСЂРѕРІ
 void  Vector3Add(Vector3&,const Vector3&, const Vector3&);
 
-// Вычитание векторов
+// В¬С‹С‡РёС‚Р°РЅРёРµ РІРµРєС‚РѕСЂРѕРІ
 void  Vector3Sub(Vector3&,const Vector3&, const Vector3&);
 
-// Умножение вектора на пямоугольную матрицу 4х3
+// вЂќРјРЅРѕР¶РµРЅРёРµ РІРµРєС‚РѕСЂР° РЅР° РїВ¤РјРѕСѓРіРѕР»СЊРЅСѓСЋ РјР°С‚СЂРёС†Сѓ 4С…3
 void  Vector3Mul(Vector3&,const Vector3&,const Matrix4x3&);
 
-// Скалярное умножение
+// вЂ”РєР°Р»В¤СЂРЅРѕРµ СѓРјРЅРѕР¶РµРЅРёРµ
 float Vector3Dot(const Vector3&, const Vector3&);
 
-// Векторное умножение
+// В¬РµРєС‚РѕСЂРЅРѕРµ СѓРјРЅРѕР¶РµРЅРёРµ
 void  Vector3Cross(Vector3&, const Vector3&, const Vector3&);
 
-// Линейная интерполяция
+// Р‹РёРЅРµР№РЅР°В¤ РёРЅС‚РµСЂРїРѕР»В¤С†РёВ¤
 void  Vector3Lerp(Vector3&, Vector3&, const Vector3&, const float);
 
 };

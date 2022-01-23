@@ -19,26 +19,26 @@ struct Matrix4x3
 
 #pragma pack(pop)
 
-//Умножение на скаляр
+//РЈРјРЅРѕР¶РµРЅРёРµ РЅР° СЃРєР°Р»СЏСЂ
 void Matrix4x3Mul(Matrix4x3&, const Matrix4x3&, const float);
 
-//Транспонирование
+//РўСЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРёРµ
 void Matrix4x3Transpose(Matrix4x3&);
 void Matrix4x3Transpose(Matrix4x3&, const Matrix4x3&);
 
-//Сложение
+//РЎР»РѕР¶РµРЅРёРµ
 void Matrix4x3Add(Matrix4x3&, const Matrix4x3&, const Matrix4x3&);
 
-//Вычитание
+//Р’С‹С‡РёС‚Р°РЅРёРµ
 void Matrix4x3Sub(Matrix4x3&, const Matrix4x3&, const Matrix4x3&);
 
-//Умножение
+//РЈРјРЅРѕР¶РµРЅРёРµ
 void Matrix4x3Mul(Matrix4x3&, const Matrix4x3&, const Matrix4x3&);
 
-//Обнуление
+//РћР±РЅСѓР»РµРЅРёРµ
 void Matrix4x3Zero(Matrix4x3&);
 
-// Идентитизация
+// РРґРµРЅС‚РёС‚РёР·Р°С†РёСЏ
 void Matrix4x3Identity(Matrix4x3&);
 
 };

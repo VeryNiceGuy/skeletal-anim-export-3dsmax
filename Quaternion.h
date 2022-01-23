@@ -1,7 +1,7 @@
 #ifndef QUATERNION_H
 #define QUATERNION_H
 
-// Обычно скаляр идет первым, но для простоты записи ставим его последним //
+// РћР±С‹С‡РЅРѕ СЃРєР°Р»СЏСЂ РёРґРµС‚ РїРµСЂРІС‹Рј, РЅРѕ РґР»СЏ РїСЂРѕСЃС‚РѕС‚С‹ Р·Р°РїРёСЃРё СЃС‚Р°РІРёРј РµРіРѕ РїРѕСЃР»РµРґРЅРёРј //
 
 namespace POD_Math
 {
@@ -21,40 +21,40 @@ struct Quaternion
 
 void  QuatMul(Vector3&, const Quaternion&, const Vector3&);
 
-// Нормализация
+// РќРѕСЂРјР°Р»РёР·Р°С†РёСЏ
 void  QuatNormalize(Quaternion&, const Quaternion&);
 
-// Сферическая линейная интерполяция
+// РЎС„РµСЂРёС‡РµСЃРєР°СЏ Р»РёРЅРµР№РЅР°СЏ РёРЅС‚РµСЂРїРѕР»СЏС†РёСЏ
 void  QuatSlerp(Quaternion&, const Quaternion&, const Quaternion&, const float);
 
-// Скалярное умножение
+// РЎРєР°Р»СЏСЂРЅРѕРµ СѓРјРЅРѕР¶РµРЅРёРµ
 float QuatDotProduct(const Quaternion&, const Quaternion&);
 
-//Сопряжение
+//РЎРѕРїСЂСЏР¶РµРЅРёРµ
 void  QuatConjugate(Quaternion&, const Quaternion&);
 
-// Умножение 
+// РЈРјРЅРѕР¶РµРЅРёРµ 
 void  QuatMul(Quaternion&, const Quaternion&, const Quaternion&);
 
-// Конвертирование кватерниона в матрицу 4х4
+// РљРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅРёРµ РєРІР°С‚РµСЂРЅРёРѕРЅР° РІ РјР°С‚СЂРёС†Сѓ 4С…4
 void  QuatToMatrix4x4(Matrix4x4&, const Quaternion&);
 
-// Конвертирование кватерниона в матрицу 4х3
+// РљРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅРёРµ РєРІР°С‚РµСЂРЅРёРѕРЅР° РІ РјР°С‚СЂРёС†Сѓ 4С…3
 void  QuatToMatrix4x3(Matrix4x3&, const Quaternion&);
 
-// Конвертирование матрицы 4х4 в кватернион
+// РљРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅРёРµ РјР°С‚СЂРёС†С‹ 4С…4 РІ РєРІР°С‚РµСЂРЅРёРѕРЅ
 void  Matrix4x4ToQuat(Quaternion&, const Matrix4x4&);
 
-// Конвертирование матрицы 4х3 в кватернион
+// РљРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅРёРµ РјР°С‚СЂРёС†С‹ 4С…3 РІ РєРІР°С‚РµСЂРЅРёРѕРЅ
 void  Matrix4x3ToQuat(Quaternion&, const Matrix4x3&);
 
-// Конвертирование оси и угла в кватернион
+// РљРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅРёРµ РѕСЃРё Рё СѓРіР»Р° РІ РєРІР°С‚РµСЂРЅРёРѕРЅ
 void  QuatAxis(Quaternion&,const Vector3&, const float); 
 
-// Идентитизация
+// РРґРµРЅС‚РёС‚РёР·Р°С†РёСЏ
 void QuatIdentity(Quaternion&);
 
-// Обнуление
+// РћР±РЅСѓР»РµРЅРёРµ
 void QuatZero(Quaternion&);
 
 };

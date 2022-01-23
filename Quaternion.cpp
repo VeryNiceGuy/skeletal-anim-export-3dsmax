@@ -5,7 +5,7 @@
 #include "MathTools.h"
 #include <memory>
 
-// Прямой поворот вектора
+// РџСЂСЏРјРѕР№ РїРѕРІРѕСЂРѕС‚ РІРµРєС‚РѕСЂР°
 void POD_Math::QuatMul(POD_Math::Vector3& r, const POD_Math::Quaternion& md, const POD_Math::Vector3& mr)
 {
 	
@@ -23,7 +23,7 @@ void POD_Math::QuatMul(POD_Math::Vector3& r, const POD_Math::Quaternion& md, con
 	Vector3Add(r, r,  uuv);
 };
 
-// Создаем кватернион из оси и угла
+// РЎРѕР·РґР°РµРј РєРІР°С‚РµСЂРЅРёРѕРЅ РёР· РѕСЃРё Рё СѓРіР»Р°
 void POD_Math::QuatAxis(POD_Math::Quaternion& q, const Vector3& v, const float ang)
 {
 	POD_Math::Vector3 tmp=Vector3();
@@ -37,7 +37,7 @@ void POD_Math::QuatAxis(POD_Math::Quaternion& q, const Vector3& v, const float a
 	q.z = Sina * tmp.z;
 };
 
-// Нормализация
+// РќРѕСЂРјР°Р»РёР·Р°С†РёСЏ
 void POD_Math::QuatNormalize(POD_Math::Quaternion& r, const POD_Math::Quaternion& q)
 {
 	float magnitude = sqrt(q.w * q.w + q.x * q.x + q.y * q.y + q.z * q.z);
@@ -110,13 +110,13 @@ void POD_Math::QuatSlerp(POD_Math::Quaternion& r, const POD_Math::Quaternion& q1
 		r.z = k0 * q1.z + k1 * q1z;
 };
 
-// Скалярное произведение
+// РЎРєР°Р»СЏСЂРЅРѕРµ РїСЂРѕРёР·РІРµРґРµРЅРёРµ
 float POD_Math::QuatDotProduct(const POD_Math::Quaternion& md, const POD_Math::Quaternion& mr)
 {
 	return md.w * mr.w + md.x * mr.x + md.y * mr.y + md.z * mr.z; 
 };
 
-// Сопряжение
+// РЎРѕРїСЂСЏР¶РµРЅРёРµ
 void POD_Math::QuatConjugate(POD_Math::Quaternion& r, const POD_Math::Quaternion& q)
 {
 	r.w =  q.w; 
@@ -125,7 +125,7 @@ void POD_Math::QuatConjugate(POD_Math::Quaternion& r, const POD_Math::Quaternion
 	r.z = -r.z; 
 };
 
-// Умножение, следуя уравнению (ab - vu1 * vu2)(avu1 + bvu2 + vu1 x vu2)
+// РЈРјРЅРѕР¶РµРЅРёРµ, СЃР»РµРґСѓСЏ СѓСЂР°РІРЅРµРЅРёСЋ (ab - vu1 * vu2)(avu1 + bvu2 + vu1 x vu2)
 void POD_Math::QuatMul(POD_Math::Quaternion& r, const POD_Math::Quaternion& md, const POD_Math::Quaternion& mr)
 {
 	 r.w = md.w * mr.w - md.x * mr.x - md.y * mr.y - md.z * mr.z;
@@ -137,7 +137,7 @@ void POD_Math::QuatMul(POD_Math::Quaternion& r, const POD_Math::Quaternion& md, 
 	 r.z = md.w * mr.z + mr.w * md.z + md.y * mr.y - md.y * mr.x;
 };
 
-// Конвертируем кватернион в матрицу 4х4
+// РљРѕРЅРІРµСЂС‚РёСЂСѓРµРј РєРІР°С‚РµСЂРЅРёРѕРЅ РІ РјР°С‚СЂРёС†Сѓ 4С…4
 void POD_Math::QuatToMatrix4x4(POD_Math::Matrix4x4& r, const POD_Math::Quaternion& q)
 {
 	r._11 = 1.0f - 2.0f * ( q.y * q.y + q.z * q.z );
@@ -153,7 +153,7 @@ void POD_Math::QuatToMatrix4x4(POD_Math::Matrix4x4& r, const POD_Math::Quaternio
 	r._33 = 1.0f - 2.0f * ( q.x * q.x + q.y * q.y ); 
 };
 
-// Конвертируем кватернион в матрицу 4х3
+// РљРѕРЅРІРµСЂС‚РёСЂСѓРµРј РєРІР°С‚РµСЂРЅРёРѕРЅ РІ РјР°С‚СЂРёС†Сѓ 4С…3
 void POD_Math::QuatToMatrix4x3(Matrix4x3& r, const POD_Math::Quaternion& q)
 {
 	r._11 = 1.0f - 2.0f * (q.y*q.y + q.z*q.z);
@@ -169,7 +169,7 @@ void POD_Math::QuatToMatrix4x3(Matrix4x3& r, const POD_Math::Quaternion& q)
 	r._33 = 1.0f - 2.0f * (q.x*q.x + q.y*q.y);
 };
 
-// Конвертирование матрицы 4х4 в кватернион
+// РљРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅРёРµ РјР°С‚СЂРёС†С‹ 4С…4 РІ РєРІР°С‚РµСЂРЅРёРѕРЅ
 void POD_Math::Matrix4x4ToQuat(POD_Math::Quaternion& r, const POD_Math::Matrix4x4& m)
 {
 	unsigned short inx=0;
@@ -229,7 +229,7 @@ void POD_Math::Matrix4x4ToQuat(POD_Math::Quaternion& r, const POD_Math::Matrix4x
 	};
 };
 
-// Конвертирование матрицы 4х3 в кватернион
+// РљРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅРёРµ РјР°С‚СЂРёС†С‹ 4С…3 РІ РєРІР°С‚РµСЂРЅРёРѕРЅ
 void POD_Math::Matrix4x3ToQuat(POD_Math::Quaternion& r, const POD_Math::Matrix4x3& m)
 {
 	unsigned short inx=0;

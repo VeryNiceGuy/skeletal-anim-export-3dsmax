@@ -1,7 +1,7 @@
 #include "Matrix4x3.h"
 #include <memory>
 
-// Умножаем матрицу на скаляр
+// РЈРјРЅРѕР¶Р°РµРј РјР°С‚СЂРёС†Сѓ РЅР° СЃРєР°Р»СЏСЂ
 void  POD_Math::Matrix4x3Mul(Matrix4x3& r, const Matrix4x3& md, const float mr)
 {
 	r._11 = md._11 * mr;  r._12 = md._12 * mr;  r._13 = md._13 * mr; 
@@ -14,7 +14,7 @@ void  POD_Math::Matrix4x3Mul(Matrix4x3& r, const Matrix4x3& md, const float mr)
 };
 
 
-//Транспонирование 
+//РўСЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРёРµ 
 void POD_Math::Matrix4x3Transpose(Matrix4x3& m)
 {
 	Matrix4x3 tmp=Matrix4x3();
@@ -28,7 +28,7 @@ void POD_Math::Matrix4x3Transpose(Matrix4x3& m)
 	m=tmp;
 };
 
-// Транспонированная матрица задается по адресу r
+// РўСЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРЅР°СЏ РјР°С‚СЂРёС†Р° Р·Р°РґР°РµС‚СЃСЏ РїРѕ Р°РґСЂРµСЃСѓ r
 void POD_Math::Matrix4x3Transpose(Matrix4x3& r, const Matrix4x3& m)
 {
 	r._11 = m._11; r._12 = m._21; r._13 = m._31; r._21 = m._41;
@@ -39,7 +39,7 @@ void POD_Math::Matrix4x3Transpose(Matrix4x3& r, const Matrix4x3& m)
 };
 
 
-// Сложение
+// РЎР»РѕР¶РµРЅРёРµ
 void POD_Math::Matrix4x3Add(POD_Math::Matrix4x3& r, const POD_Math::Matrix4x3& s0, const POD_Math::Matrix4x3& s1)
 {
 	r._11  = s0._11  + s1._11;  r._12 = s0._12 + s1._12;  r._13 = s0._13 + s1._13;
@@ -53,7 +53,7 @@ void POD_Math::Matrix4x3Add(POD_Math::Matrix4x3& r, const POD_Math::Matrix4x3& s
 
 
 
-// Вычитание
+// Р’С‹С‡РёС‚Р°РЅРёРµ
 void POD_Math::Matrix4x3Sub(POD_Math::Matrix4x3& r, const POD_Math::Matrix4x3& m, const POD_Math::Matrix4x3& s)
 {
 	r._11  = m._11  - s._11;  r._12 = m._12 - s._12;  r._13 = m._13 - s._13;
@@ -66,7 +66,7 @@ void POD_Math::Matrix4x3Sub(POD_Math::Matrix4x3& r, const POD_Math::Matrix4x3& m
 };
 
 
-// Умножение
+// РЈРјРЅРѕР¶РµРЅРёРµ
 void POD_Math::Matrix4x3Mul(POD_Math::Matrix4x3& r, const POD_Math::Matrix4x3& md, const POD_Math::Matrix4x3& mr)
 {/*
 	r._11 = md._11 * mr._11 + md._12 * mr._21 + md._13 * mr._31;
@@ -116,13 +116,13 @@ void POD_Math::Matrix4x3Mul(POD_Math::Matrix4x3& r, const POD_Math::Matrix4x3& m
 };
 
 
-// Обнуление
+// РћР±РЅСѓР»РµРЅРёРµ
 void POD_Math::Matrix4x3Zero(POD_Math::Matrix4x3&i)
 {
 	memset(&i,0,sizeof(POD_Math::Matrix4x3));
 };
 
-// Идентитизация
+// РРґРµРЅС‚РёС‚РёР·Р°С†РёСЏ
 void POD_Math::Matrix4x3Identity(POD_Math::Matrix4x3&i)
 {
 	i._11 = 1.0f; i._12 = 0.0f; i._13 = 0.0f;

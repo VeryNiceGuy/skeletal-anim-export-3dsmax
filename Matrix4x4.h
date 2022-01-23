@@ -19,32 +19,32 @@ struct Matrix4x4
 
 #pragma pack(pop)
 
-// Умножение на скаляяр
+// РЈРјРЅРѕР¶РµРЅРёРµ РЅР° СЃРєР°Р»СЏСЏСЂ
 void  Matrix4x4Mul(Matrix4x4&, const Matrix4x4&, const float);
 
-// Транспонирование
+// РўСЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРёРµ
 void  Matrix4x4Transpose(Matrix4x4&);
 void  Matrix4x4Transpose(Matrix4x4& r, const Matrix4x4&);  
 
-// Сложение
+// РЎР»РѕР¶РµРЅРёРµ
 void  Matrix4x4Add(Matrix4x4&, const Matrix4x4&, const Matrix4x4&);
 
-// Вычитание
+// Р’С‹С‡РёС‚Р°РЅРёРµ
 void  Matrix4x4Sub(Matrix4x4&, const Matrix4x4&, const Matrix4x4&);
 
-// Умножение
+// РЈРјРЅРѕР¶РµРЅРёРµ
 void  Matrix4x4Mul(Matrix4x4&, const Matrix4x4&, const Matrix4x4&);
 
-// Обнуление
+// РћР±РЅСѓР»РµРЅРёРµ
 void Matrix4x4Zero(Matrix4x4&);
 
-// Идентитизация
+// РРґРµРЅС‚РёС‚РёР·Р°С†РёСЏ
 void  Matrix4x4Identity(Matrix4x4&);
 
-// След
+// РЎР»РµРґ
 float Matrix4x4Trace(const Matrix4x4&);
 
-// Создаем леворукую матрицу перспективной проекции
+// РЎРѕР·РґР°РµРј Р»РµРІРѕСЂСѓРєСѓСЋ РјР°С‚СЂРёС†Сѓ РїРµСЂСЃРїРµРєС‚РёРІРЅРѕР№ РїСЂРѕРµРєС†РёРё
 void CreatePerspectiveFovLH(Matrix4x4&, float, float, float, float);
 
 };
